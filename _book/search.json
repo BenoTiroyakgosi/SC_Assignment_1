@@ -58,5 +58,15 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical: one</span>"
     ]
+  },
+  {
+    "objectID": "prac4.html",
+    "href": "prac4.html",
+    "title": "4  Practical: four",
+    "section": "",
+    "text": "4.1 Question 4\n# Generate a sequence of 10000 numbers from -2 to 2\nnums &lt;- seq(-2, 2 , length.out = 10000)\n\n# Obtain the respective sin(x) values\nsin_values &lt;- sin(nums)\n\nplot(nums, sin_values,\n     pch  = 19,        # plot character\n     main = \"Graph of sin(x) for x in [-2,2]\",\n     xlab = \"x\",\n     ylab = \"sin(x)\",\n     lwd  = 3,         # line width\n     col  = \"red\",\n     las  = 1  ,       # axis \n     cex.lab = 1.4,    # axis titles\n     cex.axis = 1.2   # axis tick labels\n     )",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical: four</span>"
+    ]
   }
 ]

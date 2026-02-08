@@ -1,3 +1,29 @@
 
 # Practical: four
 
+## Question 4
+
+```{r, echo = TRUE}
+
+# Generate a sequence of 10000 numbers from -2 to 2
+nums <- seq(-2, 2 , length.out = 10000)
+
+# Obtain the respective sin(x) values
+sin_values <- sin(nums)
+
+plot(nums, sin_values,
+     pch  = 19,        # plot character
+     main = "Graph of sin(x) for x in [-2,2]",
+     xlab = "x",
+     ylab = "sin(x)",
+     lwd  = 3,         # line width
+     col  = "red",
+     las  = 1  ,       # axis 
+     cex.lab = 1.4,    # axis titles
+     cex.axis = 1.2   # axis tick labels
+     )
+
+
+
+```
+

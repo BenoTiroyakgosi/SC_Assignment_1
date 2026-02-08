@@ -96,9 +96,33 @@ print(beta)
 linear_model <- lm(dist ~ speed, data = cars)
 summary(linear_model)
 
+
+
 #===============================================
 #  Day 3: Question 4 and 5
 #===============================================
 
+
+#-----------------------------------------------
+#  Question 4
+#-----------------------------------------------
+
+# Generate a sequence of 10000 numbers from -2 to 2
+nums <- seq(-2, 2 , length.out = 10000)
+
+# Obtain the respective sin(x) values
+sin_values <- sin(nums)
+
+plot(nums, sin_values,
+     pch  = 19,        # plot character
+     main = "Graph of sin(x) for x in [-2,2]",
+     xlab = "x",
+     ylab = "sin(x)",
+     lwd  = 3,         # line width
+     col  = "red",
+     las  = 1  ,       # axis 
+     cex.lab = 1.4,    # axis titles
+     cex.axis = 1.2   # axis tick labels
+     )
 
 
