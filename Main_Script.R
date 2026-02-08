@@ -96,7 +96,9 @@ print(beta)
 linear_model <- lm(dist ~ speed, data = cars)
 summary(linear_model)
 
-
+#===============================================
+#  Day 3: Question 4 and 5
+#===============================================
 
 
 

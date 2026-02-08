@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "1 Introduction",
+    "section": "",
+    "text": "1 Introduction",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "1 Introduction",
+    "section": "1.1 Welcome",
+    "text": "1.1 Welcome\nHi! My name is Beno Tiroyakgosi and welcome to my work. I hope you are doing well. The link to the github repository is: Github\nBest wishes this year during your honours.\n:-)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "prac1.html",
+    "href": "prac1.html",
+    "title": "2  Practical: one",
+    "section": "",
+    "text": "2.1 Question 1\n# This checks for NA in all the entries of the data frame\nlogical_df &lt;- is.na(airquality)       \n  \n# Summing across the rows. If NA exists its recorded as 1 in logical_df\ncheck_na &lt;-  apply(logical_df, 1, sum)\n\n# creates a vector with the rows which have NA\nrows_with_na &lt;- which(check_na &gt; 0)\nprint(rows_with_na)\n\n [1]   5   6  10  11  25  26  27  32  33  34  35  36  37  39  42  43  45  46  52\n[20]  53  54  55  56  57  58  59  60  61  65  72  75  83  84  96  97  98 102 103\n[39] 107 115 119 150",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical: one</span>"
+    ]
+  },
+  {
+    "objectID": "prac1.html#question-2",
+    "href": "prac1.html#question-2",
+    "title": "2  Practical: one",
+    "section": "2.2 Question 2",
+    "text": "2.2 Question 2\n\nstatistics_fun &lt;- function(input){\n  # This function computes the mean, sd, min and max of a numerical vector input\n  # This function returns a vector of the statistics \n  # NAs are removed during computation and results are rounded to 2 decimal places\n  \n  average   &lt;- round(mean(input, na.rm = TRUE), 2)\n  stand_dev &lt;- round(sd(input, na.rm = TRUE), 2)\n  min_val   &lt;- round(min(input, na.rm = TRUE), 2)\n  max_val   &lt;- round(max(input, na.rm = TRUE), 2)\n  \n  return(c(average, stand_dev, min_val, max_val))\n  \n  }\n\n# calling function to compute stats\ntemp_stats  &lt;- statistics_fun(airquality$Temp)    \nozone_stats &lt;- statistics_fun(airquality$Ozone)\n\n\n# Creating data frame of statistics \nstats_df &lt;- data.frame(temp_stats,\n                       ozone_stats,\n                       row.names = c(\"Mean\", \"Standard Deviation\", \"Minimum\", \"Maximum\")\n                       )\n\nprint(stats_df)\n\n                   temp_stats ozone_stats\nMean                    77.88       42.13\nStandard Deviation       9.47       32.99\nMinimum                 56.00        1.00\nMaximum                 97.00      168.00",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical: one</span>"
+    ]
+  },
+  {
+    "objectID": "prac1.html#question-3",
+    "href": "prac1.html#question-3",
+    "title": "2  Practical: one",
+    "section": "2.3 Question 3",
+    "text": "2.3 Question 3\n\n# Binding 1s to regressor/X which accounts for intercept\n\nregressor_x &lt;- cbind(1, cars$speed) \n\n# Storing dependent variable/ Y\ndependent_var_y &lt;- cars$dist\n\n\n# Beta computation\nbeta &lt;- solve(t(regressor_x) %*% regressor_x) %*% t(regressor_x) %*% dependent_var_y\nprint(beta)\n\n           [,1]\n[1,] -17.579095\n[2,]   3.932409",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical: one</span>"
+    ]
+  },
+  {
+    "objectID": "prac1.html#question-4",
+    "href": "prac1.html#question-4",
+    "title": "2  Practical: one",
+    "section": "2.4 Question 4",
+    "text": "2.4 Question 4\n\n# Fit linear regression model where distance depends on speed\nlinear_model &lt;- lm(dist ~ speed, data = cars)\nsummary(linear_model)\n\n\nCall:\nlm(formula = dist ~ speed, data = cars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-29.069  -9.525  -2.272   9.215  43.201 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -17.5791     6.7584  -2.601   0.0123 *  \nspeed         3.9324     0.4155   9.464 1.49e-12 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 15.38 on 48 degrees of freedom\nMultiple R-squared:  0.6511,    Adjusted R-squared:  0.6438 \nF-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical: one</span>"
+    ]
+  }
+]
