@@ -296,11 +296,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Manual QQ-plot vs Standard Normal"</span>,</span>
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"p"</span>,</span>
 <span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"black"</span>,</span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)                              <span class="co"># adjusting y axis limits to match presentation of qqPlot</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(expected_q, lower, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">1</span>)   <span class="co"># lower bound (2.5th quantile)</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(expected_q, upper, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">1</span>)   <span class="co"># upper bound (97.5th quantile)</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">1</span>)  <span class="co"># 45 degr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)             <span class="co"># adjusting y axis limits to match presentation of qqPlot</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>(<span class="at">col =</span> <span class="st">"grey"</span>)</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(expected_q, lower, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">1</span>)   <span class="co"># lower bound (2.5th quantile)</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(expected_q, upper, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">1</span>)   <span class="co"># upper bound (97.5th quantile)</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">1</span>)  <span class="co"># 45 degree line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -309,7 +310,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ-plot against standard normal for verification</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqPlot</span>(t_sorted, <span class="at">envelope =</span> <span class="fl">0.95</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqPlot</span>(t_sorted,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">envelope =</span> <span class="fl">0.95</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"QQ-plot using R function"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Standard Normal Quantiles"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">"Sample Quantiles(t)"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

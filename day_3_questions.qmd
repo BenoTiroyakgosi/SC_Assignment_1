@@ -87,14 +87,20 @@ plot(expected_q, t_sorted,
      main = "Manual QQ-plot vs Standard Normal",
      type = "p",
      col = "black",
-     ylim = c(-5,5)                              # adjusting y axis limits to match presentation of qqPlot
-)
+     ylim = c(-5,5)             # adjusting y axis limits to match presentation of qqPlot
+     )
+grid(col = "grey")
 lines(expected_q, lower, col = "red", lty = 1)   # lower bound (2.5th quantile)
 lines(expected_q, upper, col = "red", lty = 1)   # upper bound (97.5th quantile)
-abline(0, 1, col = "blue", lwd = 1)  # 45 degr
+abline(0, 1, col = "blue", lwd = 1)  # 45 degree line
+
 
 # QQ-plot against standard normal for verification
-qqPlot(t_sorted, envelope = 0.95, ylim = c(-5, 5))
-
+qqPlot(t_sorted,
+       envelope = 0.95,
+       ylim = c(-5, 5),
+       main = "QQ-plot using R function",
+       xlab = "Standard Normal Quantiles",
+       ylab = "Sample Quantiles(t)"
+       )
 ```
-
