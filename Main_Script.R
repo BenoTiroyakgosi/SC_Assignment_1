@@ -6,6 +6,8 @@
 #==============================================
 #  Load Packages
 #==============================================
+library(car)
+
 
 #==============================================
 #  Load Data
@@ -124,5 +126,77 @@ plot(nums, sin_values,
      cex.lab = 1.4,    # axis titles
      cex.axis = 1.2   # axis tick labels
      )
+
+
+#------------------------------------------------
+#  Question 5
+#------------------------------------------------
+
+
+# sampling from a t-distribution
+# setting seed makes simulation reproducible 
+set.seed(123)          
+t_sample <- rt(1000, df = 1)
+
+# The QQ-plot compares ordered values so the values sampled are sorted
+
+t_sorted <- sort(t_sample)
+num_of_t <- length(t_sorted)
+
+# Approximate normal quantiles to plot against t sample quantiles
+set.seed(456)
+sim_norm        <- rnorm(10000)
+sim_norm_sorted <- sort(sim_norm)
+
+# relative position to be used for quantile matching
+relative_pos_cal <- (1:num_of_t) / num_of_t   
+
+#relative position multiplied by total number of sim norm  to exctract 1000 associated values
+expected_q <- sim_norm_sorted[round(relative_pos_cal * length(sim_norm_sorted))] 
+
+#Beginning of 95% envelope
+set.seed(789)
+n_sims <- 1000
+
+# simulate 1000x1000 matrix with columns being from the same normal sample. So 1000 samples. 
+# The idea is to obtain the 2.5th and 97.5th quantile from each nth sample to plot
+
+sim_matrix <- matrix(rnorm(num_of_t*n_sims), nrow = num_of_t, ncol = n_sims)
+
+# sorting columns then obtaining quantiles
+sim_matrix <- apply(sim_matrix, 2, sort)
+
+lower_2_point_5 <- function(input){
+  #This function finds and returns the 2.5th percentile 
+  
+  return(quantile(input, probs = 0.025))
+}
+
+upper_97_point_5 <- function(input){
+  #This function finds and returns the 97.5th percentile
+  
+  return(quantile(input, probs = 0.975))
+}
+
+
+lower <- apply(sim_matrix, 1, lower_2_point_5)
+upper <- apply(sim_matrix, 1, upper_97_point_5)
+
+# Manual QQ-plot
+plot(expected_q, t_sorted,
+     xlab = "Standard Normal Quantiles", 
+     ylab = "Sample Quantiles (t)", 
+     main = "Manual QQ-plot vs Standard Normal",
+     type = "p",
+     col = "black",
+     ylim = c(-5,5)                              # adjusting y axis limits to match presentation of qqPlot
+)
+lines(expected_q, lower, col = "red", lty = 1)   # lower bound (2.5th quantile)
+lines(expected_q, upper, col = "red", lty = 1)   # upper bound (97.5th quantile)
+abline(0, 1, col = "blue", lwd = 1)  # 45 degree line
+
+
+# QQ-plot against standard normal for verification
+qqPlot(t_sorted, envelope = 0.95, ylim = c(-5, 5))
 
 

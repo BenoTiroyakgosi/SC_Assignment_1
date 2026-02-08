@@ -60,6 +60,26 @@
     ]
   },
   {
+    "objectID": "day_3_questions.html",
+    "href": "day_3_questions.html",
+    "title": "3  Day three: Practical questions four and five",
+    "section": "",
+    "text": "3.1 Question 4\nLoading required package: carData\n# Generate a sequence of 10000 numbers from -2 to 2\nnums &lt;- seq(-2, 2 , length.out = 10000)\n\n# Obtain the respective sin(x) values\nsin_values &lt;- sin(nums)\n\nplot(nums, sin_values,\n     pch  = 19,        # plot character\n     main = \"Graph of sin(x) for x in [-2,2]\",\n     xlab = \"x\",\n     ylab = \"sin(x)\",\n     lwd  = 3,         # line width\n     col  = \"red\",\n     las  = 1  ,       # axis \n     cex.lab = 1.4,    # axis titles\n     cex.axis = 1.2   # axis tick labels\n     )",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day three: Practical questions four and five</span>"
+    ]
+  },
+  {
+    "objectID": "day_3_questions.html#question-5",
+    "href": "day_3_questions.html#question-5",
+    "title": "3  Day three: Practical questions four and five",
+    "section": "3.2 Question 5",
+    "text": "3.2 Question 5\n\n# sampling from a t-distribution\n# setting seed makes simulation reproducible \nset.seed(123)          \nt_sample &lt;- rt(1000, df = 1)\n\n# The QQ-plot compares ordered values so the values sampled are sorted\n\nt_sorted &lt;- sort(t_sample)\nnum_of_t &lt;- length(t_sorted)\n\n# Approximate normal quantiles to plot against t sample quantiles\nset.seed(456)\nsim_norm        &lt;- rnorm(10000)\nsim_norm_sorted &lt;- sort(sim_norm)\n\n# relative position to be used for quantile matching\nrelative_pos_cal &lt;- (1:num_of_t) / num_of_t   \n\n#relative position multiplied by total number of sim norm  to exctract 1000 associated values\nexpected_q &lt;- sim_norm_sorted[round(relative_pos_cal * length(sim_norm_sorted))] \n\n#Beginning of 95% envelope\nset.seed(789)\nn_sims &lt;- 1000\n\n# simulate 1000x1000 matrix with columns being from the same normal sample. So 1000 samples. \n# The idea is to obtain the 2.5th and 97.5th quantile from each nth sample to plot\n\nsim_matrix &lt;- matrix(rnorm(num_of_t * n_sims), nrow = num_of_t, ncol = n_sims)\n\n# sorting columns then obtaining quantiles\nsim_matrix &lt;- apply(sim_matrix, 2, sort)\n\nlower_2_point_5 &lt;- function(input){\n  #This function finds and returns the 2.5th percentile \n  \n  return(quantile(input, probs = 0.025))\n}\n\nupper_97_point_5 &lt;- function(input){\n  #This function finds and returns the 97.5th percentile\n  \n  return(quantile(input, probs = 0.975))\n}\n\n\nlower &lt;- apply(sim_matrix, 1, lower_2_point_5)\nupper &lt;- apply(sim_matrix, 1, upper_97_point_5)\n\n# Manual QQ-plot\nplot(expected_q, t_sorted,\n     xlab = \"Standard Normal Quantiles\", \n     ylab = \"Sample Quantiles (t)\", \n     main = \"Manual QQ-plot vs Standard Normal\",\n     type = \"p\",\n     col = \"black\",\n     ylim = c(-5,5)                              # adjusting y axis limits to match presentation of qqPlot\n)\nlines(expected_q, lower, col = \"red\", lty = 1)   # lower bound (2.5th quantile)\nlines(expected_q, upper, col = \"red\", lty = 1)   # upper bound (97.5th quantile)\nabline(0, 1, col = \"blue\", lwd = 1)  # 45 degr\n\n\n\n\n\n\n\n# QQ-plot against standard normal for verification\nqqPlot(t_sorted, envelope = 0.95, ylim = c(-5, 5))\n\n\n\n\n\n\n\n\n[1] 1000    1",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day three: Practical questions four and five</span>"
+    ]
+  },
+  {
     "objectID": "prac4.html",
     "href": "prac4.html",
     "title": "4  Practical: four",
