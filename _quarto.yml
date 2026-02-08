@@ -1,0 +1,27 @@
+project:
+  title: Statistical Computing Assignment 1 # book title
+  type: book                                # project type
+  output-dir: _book  #output to folder named _book
+  render: 
+    - index.qmd
+    - prac1.qmd
+    - day_3_questions.qmd
+    - prac4.qmd
+    
+  
+  
+  
+book:                 
+  chapters:     
+    - index.qmd # states the chapters of the book
+    - prac1.qmd
+    - day_3_questions.qmd
+    - prac4.qmd
+    
+format:                                     
+  html:                                     # states the output format. PDF is an option 
+    theme: cosmo
+    toc: true                               # display table of contents 
+    toc-depth: 3                            # how heading layers to display
+    toc-location: right
+    
