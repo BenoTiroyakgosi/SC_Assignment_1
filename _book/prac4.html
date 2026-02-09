@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -135,8 +170,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1"><span class="header-section-number">4.1</span> Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><span class="header-section-number">4.2</span> Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3"><span class="header-section-number">4.3</span> Question 3</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -160,8 +203,167 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="question-1" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="question-1"><span class="header-section-number">4.1</span> Question 1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This function displays columns and notes NA values</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "year"
+[1] 1846
+[1] "_____________________"
+[1] "month"
+[1]  5 10  7  9  4
+[1] "_____________________"
+[1] "day"
+[1]  4  7 31 15 21
+[1] "_____________________"
+[1] "dep_time"
+[1]   59 1032 1556 2139   NA
+[1] "_____________________"
+[1] "sched_dep_time"
+[1] 1359 1654  505 1456 1515
+[1] "_____________________"
+[1] "dep_delay"
+[1]  68 500 272 175  NA
+[1] "_____________________"
+[1] "arr_time"
+[1]   16 1427  757  953   NA
+[1] "_____________________"
+[1] "sched_arr_time"
+[1] 1917  756 1044  828  131
+[1] "_____________________"
+[1] "arr_delay"
+[1] -39 251 366 449  NA
+[1] "_____________________"
+[1] "carrier"
+ [1] "DL" "UA" "YV" "AS" "9E" "AA" "FL" "HA" "B6" "EV" "VX" "F9" "US" "WN" "OO"
+[16] "MQ"
+[1] "_____________________"
+[1] "flight"
+[1]  160  171 1136 3309 4894
+[1] "_____________________"
+[1] "tailnum"
+ [1] "N586AS" "N917WN" "N602LR" "N340NB" "N560AA" "N359AA" "N112US" "N1608" 
+ [9] "N830AW" "N631VA" "N38443" "N658JB" "N796SW" "N688DL" "N519LR" "N915AT"
+[17] "N188US" "N76055" "N935LR" NA      
+[1] "4024 unique entries not displayed"
+[1] "_____________________"
+[1] "origin"
+[1] "JFK" "LGA" "EWR"
+[1] "_____________________"
+[1] "dest"
+ [1] "TVC" "OMA" "SNA" "SRQ" "ANC" "DTW" "SAV" "JAC" "IND" "PIT" "TYS" "ROC"
+[13] "CMH" "LGA" "MVY" "MYR" "DSM" "CVG" "ORD" "PSE"
+[1] "85 unique entries not displayed"
+[1] "_____________________"
+[1] "air_time"
+[1]  41 340 371  78  NA
+[1] "_____________________"
+[1] "distance"
+[1] 1894 1617 1096 2425 1874
+[1] "_____________________"
+[1] "hour"
+[1]  9 17 18 11 10
+[1] "_____________________"
+[1] "minute"
+[1] 53 25 39 27 52
+[1] "_____________________"
+[1] "time_hour"
+ [1] "2013-11-26 07:00:00 EST" "2013-11-22 18:00:00 EST"
+ [3] "2013-10-08 05:00:00 EDT" "2013-03-06 20:00:00 EST"
+ [5] "2013-11-14 09:00:00 EST" "2013-03-29 21:00:00 EDT"
+ [7] "2013-08-04 09:00:00 EDT" "2013-08-30 19:00:00 EDT"
+ [9] "2013-02-05 23:00:00 EST" "2013-01-05 06:00:00 EST"
+[11] "2013-08-07 21:00:00 EDT" "2013-08-10 14:00:00 EDT"
+[13] "2013-04-04 12:00:00 EDT" "2013-11-11 23:00:00 EST"
+[15] "2013-07-27 06:00:00 EDT" "2013-08-24 07:00:00 EDT"
+[17] "2013-02-22 14:00:00 EST" "2013-07-26 23:00:00 EDT"
+[19] "2013-10-25 12:00:00 EDT" "2013-09-06 16:00:00 EDT"
+[1] "6916 unique entries not displayed"
+[1] "_____________________"</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Not all unique entries displayed for these non-numeric cols: tailnum,
+dest, time_hour</code></pre>
+</div>
+</div>
+</section>
+<section id="question-2" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="question-2"><span class="header-section-number">4.2</span> Question 2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>flight1 <span class="ot">&lt;-</span> flights<span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">1</span>)<span class="sc">%&gt;%</span>      <span class="co"># choosing all rows with a month value of 1</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(carrier)<span class="sc">%&gt;%</span>       <span class="co"># grouping by carrier to show carrier stats</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_distance =</span> <span class="fu">mean</span>(distance),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_distance =</span> <span class="fu">sd</span>(distance))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>flight1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 3
+   carrier mean_distance sd_distance
+   &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt;
+ 1 9E               476.       334. 
+ 2 AA              1350.       626. 
+ 3 AS              2402          0  
+ 4 B6              1062.       681. 
+ 5 DL              1220.       644. 
+ 6 EV               522.       294. 
+ 7 F9              1620          0  
+ 8 FL               691.       142. 
+ 9 HA              4983          0  
+10 MQ               566.       223. 
+11 OO               733         NA  
+12 UA              1462.       778. 
+13 US               536.       553. 
+14 VX              2495.        98.2
+15 WN               942.       496. 
+16 YV               229          0  </code></pre>
+</div>
+</div>
+</section>
+<section id="question-3" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="question-3"><span class="header-section-number">4.3</span> Question 3</h2>
+<p>The output above illustrates that carrier AS, HA, F9, YV and OO need to be investigated. The results shown below indicate that there are repeat values which is why the distance standard deviation for AS, HA, F9 and YV is zero.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From the output, the carriers with mean 0 and NA are AS, HA, F9, YV and OO</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>odd_carriers <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">carrier =</span> <span class="fu">c</span>(<span class="st">"AS"</span>,<span class="st">"HA"</span>, <span class="st">"F9"</span>, <span class="st">"OO"</span>, <span class="st">"YV"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>flights<span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">1</span> )<span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">semi_join</span>(odd_carriers, <span class="fu">join_by</span>(carrier))<span class="sc">%&gt;%</span>    <span class="co"># To leave desired carriers in tibble</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(carrier, distance)                     <span class="co"># Shows the different values carriers have</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  carrier distance
+  &lt;chr&gt;      &lt;dbl&gt;
+1 AS          2402
+2 F9          1620
+3 HA          4983
+4 YV           229
+5 OO           733</code></pre>
+</div>
+</div>
+<p>The distance standard deviation of OO is NA and the output below shows that this is because there exists only one value during month 1. As a result the function <code>sd()</code> produces <code>NA</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Showing how many entries of OO exist</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>flights<span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(carrier <span class="sc">==</span> <span class="st">"OO"</span> <span class="sc">&amp;</span> month <span class="sc">==</span> <span class="dv">1</span> )<span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(carrier, month)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  carrier month
+  &lt;chr&gt;   &lt;int&gt;
+1 OO          1</code></pre>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

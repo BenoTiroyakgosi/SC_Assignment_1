@@ -7,6 +7,10 @@
 #  Load Packages
 #==============================================
 library(car)
+library(tidyverse)
+library(dplyr)
+library(nycflights13)
+
 
 
 #==============================================
@@ -209,6 +213,93 @@ qqPlot(t_sorted,
 #===================================================
 #  Practical 4
 #===================================================
+
+
+#---------------------------------------------------
+#  Question 1
+#---------------------------------------------------
+
+# This function displays columns and notes NA values
+
+UtilsDataRSV::view_cols(flights)
+
+
+#---------------------------------------------------
+# Question 2
+#---------------------------------------------------
+
+
+
+flight1 <- flights%>%
+  filter(month == 1)%>%      # choosing all rows with a month value of 1
+  group_by(carrier)%>%       # grouping by carrier to show carrier stats
+  summarise(mean_distance = mean(distance),
+            sd_distance = sd(distance))
+flight1
+
+
+#--------------------------------------------------
+# Question 3
+#--------------------------------------------------
+
+
+# From the output, the carriers with mean 0 and NA are AS, HA, F9, YV and OO
+
+
+odd_carriers <- tibble(carrier = c("AS","HA", "F9", "OO", "YV"))
+
+
+flights%>%
+  filter(month == 1 )%>%
+  semi_join(odd_carriers, join_by(carrier))%>%    # To leave desired carriers in tibble
+  distinct(carrier, distance)                     # Shows the different values carriers have
+
+#Showing how many entries of OO exist
+
+flights%>%
+  filter(carrier == "OO" & month == 1 )%>%
+  select(carrier, month)
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

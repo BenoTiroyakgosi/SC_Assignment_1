@@ -78,5 +78,35 @@
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day three: Practical questions four and five</span>"
     ]
+  },
+  {
+    "objectID": "prac4.html",
+    "href": "prac4.html",
+    "title": "4  Practical: four",
+    "section": "",
+    "text": "4.1 Question 1\n# This function displays columns and notes NA values\n\nUtilsDataRSV::view_cols(flights)\n\n[1] \"year\"\n[1] 1846\n[1] \"_____________________\"\n[1] \"month\"\n[1]  5 10  7  9  4\n[1] \"_____________________\"\n[1] \"day\"\n[1]  4  7 31 15 21\n[1] \"_____________________\"\n[1] \"dep_time\"\n[1]   59 1032 1556 2139   NA\n[1] \"_____________________\"\n[1] \"sched_dep_time\"\n[1] 1359 1654  505 1456 1515\n[1] \"_____________________\"\n[1] \"dep_delay\"\n[1]  68 500 272 175  NA\n[1] \"_____________________\"\n[1] \"arr_time\"\n[1]   16 1427  757  953   NA\n[1] \"_____________________\"\n[1] \"sched_arr_time\"\n[1] 1917  756 1044  828  131\n[1] \"_____________________\"\n[1] \"arr_delay\"\n[1] -39 251 366 449  NA\n[1] \"_____________________\"\n[1] \"carrier\"\n [1] \"DL\" \"UA\" \"YV\" \"AS\" \"9E\" \"AA\" \"FL\" \"HA\" \"B6\" \"EV\" \"VX\" \"F9\" \"US\" \"WN\" \"OO\"\n[16] \"MQ\"\n[1] \"_____________________\"\n[1] \"flight\"\n[1]  160  171 1136 3309 4894\n[1] \"_____________________\"\n[1] \"tailnum\"\n [1] \"N586AS\" \"N917WN\" \"N602LR\" \"N340NB\" \"N560AA\" \"N359AA\" \"N112US\" \"N1608\" \n [9] \"N830AW\" \"N631VA\" \"N38443\" \"N658JB\" \"N796SW\" \"N688DL\" \"N519LR\" \"N915AT\"\n[17] \"N188US\" \"N76055\" \"N935LR\" NA      \n[1] \"4024 unique entries not displayed\"\n[1] \"_____________________\"\n[1] \"origin\"\n[1] \"JFK\" \"LGA\" \"EWR\"\n[1] \"_____________________\"\n[1] \"dest\"\n [1] \"TVC\" \"OMA\" \"SNA\" \"SRQ\" \"ANC\" \"DTW\" \"SAV\" \"JAC\" \"IND\" \"PIT\" \"TYS\" \"ROC\"\n[13] \"CMH\" \"LGA\" \"MVY\" \"MYR\" \"DSM\" \"CVG\" \"ORD\" \"PSE\"\n[1] \"85 unique entries not displayed\"\n[1] \"_____________________\"\n[1] \"air_time\"\n[1]  41 340 371  78  NA\n[1] \"_____________________\"\n[1] \"distance\"\n[1] 1894 1617 1096 2425 1874\n[1] \"_____________________\"\n[1] \"hour\"\n[1]  9 17 18 11 10\n[1] \"_____________________\"\n[1] \"minute\"\n[1] 53 25 39 27 52\n[1] \"_____________________\"\n[1] \"time_hour\"\n [1] \"2013-11-26 07:00:00 EST\" \"2013-11-22 18:00:00 EST\"\n [3] \"2013-10-08 05:00:00 EDT\" \"2013-03-06 20:00:00 EST\"\n [5] \"2013-11-14 09:00:00 EST\" \"2013-03-29 21:00:00 EDT\"\n [7] \"2013-08-04 09:00:00 EDT\" \"2013-08-30 19:00:00 EDT\"\n [9] \"2013-02-05 23:00:00 EST\" \"2013-01-05 06:00:00 EST\"\n[11] \"2013-08-07 21:00:00 EDT\" \"2013-08-10 14:00:00 EDT\"\n[13] \"2013-04-04 12:00:00 EDT\" \"2013-11-11 23:00:00 EST\"\n[15] \"2013-07-27 06:00:00 EDT\" \"2013-08-24 07:00:00 EDT\"\n[17] \"2013-02-22 14:00:00 EST\" \"2013-07-26 23:00:00 EDT\"\n[19] \"2013-10-25 12:00:00 EDT\" \"2013-09-06 16:00:00 EDT\"\n[1] \"6916 unique entries not displayed\"\n[1] \"_____________________\"\n\n\nWarning: Not all unique entries displayed for these non-numeric cols: tailnum,\ndest, time_hour",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical: four</span>"
+    ]
+  },
+  {
+    "objectID": "prac4.html#question-2",
+    "href": "prac4.html#question-2",
+    "title": "4  Practical: four",
+    "section": "4.2 Question 2",
+    "text": "4.2 Question 2\n\nflight1 &lt;- flights%&gt;%\n  filter(month == 1)%&gt;%      # choosing all rows with a month value of 1\n  group_by(carrier)%&gt;%       # grouping by carrier to show carrier stats\n  summarise(mean_distance = mean(distance),\n            sd_distance = sd(distance))\nflight1\n\n# A tibble: 16 × 3\n   carrier mean_distance sd_distance\n   &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt;\n 1 9E               476.       334. \n 2 AA              1350.       626. \n 3 AS              2402          0  \n 4 B6              1062.       681. \n 5 DL              1220.       644. \n 6 EV               522.       294. \n 7 F9              1620          0  \n 8 FL               691.       142. \n 9 HA              4983          0  \n10 MQ               566.       223. \n11 OO               733         NA  \n12 UA              1462.       778. \n13 US               536.       553. \n14 VX              2495.        98.2\n15 WN               942.       496. \n16 YV               229          0",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical: four</span>"
+    ]
+  },
+  {
+    "objectID": "prac4.html#question-3",
+    "href": "prac4.html#question-3",
+    "title": "4  Practical: four",
+    "section": "4.3 Question 3",
+    "text": "4.3 Question 3\nThe output above illustrates that carrier AS, HA, F9, YV and OO need to be investigated. The results shown below indicate that there are repeat values which is why the distance standard deviation for AS, HA, F9 and YV is zero.\n\n# From the output, the carriers with mean 0 and NA are AS, HA, F9, YV and OO\n\n\nodd_carriers &lt;- tibble(carrier = c(\"AS\",\"HA\", \"F9\", \"OO\", \"YV\"))\n\n\nflights%&gt;%\n  filter(month == 1 )%&gt;%\n  semi_join(odd_carriers, join_by(carrier))%&gt;%    # To leave desired carriers in tibble\n  distinct(carrier, distance)                     # Shows the different values carriers have\n\n# A tibble: 5 × 2\n  carrier distance\n  &lt;chr&gt;      &lt;dbl&gt;\n1 AS          2402\n2 F9          1620\n3 HA          4983\n4 YV           229\n5 OO           733\n\n\nThe distance standard deviation of OO is NA and the output below shows that this is because there exists only one value during month 1. As a result the function sd() produces NA.\n\n#Showing how many entries of OO exist\n\nflights%&gt;%\n  filter(carrier == \"OO\" & month == 1 )%&gt;%\n  select(carrier, month)\n\n# A tibble: 1 × 2\n  carrier month\n  &lt;chr&gt;   &lt;int&gt;\n1 OO          1",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical: four</span>"
+    ]
   }
 ]
