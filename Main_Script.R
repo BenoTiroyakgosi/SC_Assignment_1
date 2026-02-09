@@ -259,10 +259,34 @@ flights%>%
 flights%>%
   filter(carrier == "OO" & month == 1 )%>%
   select(carrier, month)
-  
 
+#----------------------------------------------------
+# Question 4
+#----------------------------------------------------
 
+flights %>%
+  group_by(month, carrier) %>%   # grouping by two variables so they appear in final output
+  summarise(
+    avg_dep_delay = mean(dep_delay, na.rm = TRUE)
+  ) %>%
+  pivot_wider(names_from = carrier, values_from = avg_dep_delay)
 
+#----------------------------------------------------
+# Question 5
+#----------------------------------------------------
+
+# tibble which meets conditions
+
+flight_condition<-  flights%>%
+  filter(dep_delay > 0 & arr_delay <= 0)
+
+total_flights <- nrow(flights)
+met_condition <- nrow(flight_condition)
+
+prop_of_flights <- met_condition / total_flights 
+print(prop_of_flights)
+
+            
 
 
 
