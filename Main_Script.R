@@ -275,13 +275,14 @@ flights %>%
 # Question 5
 #----------------------------------------------------
 
+
 # tibble which meets conditions
 
 flight_condition<-  flights%>%
   filter(dep_delay > 0 & arr_delay <= 0)
 
-total_flights <- nrow(flights)
-met_condition <- nrow(flight_condition)
+total_flights <- nrow(flights)           # number of total flights
+met_condition <- nrow(flight_condition)  # number of flights which met condition
 
 prop_of_flights <- met_condition / total_flights 
 print(prop_of_flights)
