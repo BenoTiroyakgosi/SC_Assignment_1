@@ -96,7 +96,7 @@ multi_routes <- flights %>%
   filter(n_distinct(carrier) > 1) %>%   # filtering out non-repeat routes 
   ungroup()
 
-avg_arr_delay <- multi_routes %>%
+avg_arr_delay <<- multi_routes %>%
   group_by(origin, dest, carrier) %>%   
   summarise(
     arr_del_avg = mean(arr_delay, na.rm = TRUE),
@@ -138,3 +138,87 @@ avg_arr_delay %>%
 
 ```
 
+## Question 6: Part 5
+
+From the previous output it is evident that the JFK-ATL route has the largest difference so it is investigated below. 
+
+```{r}
+
+# Observing JFK ATL flights with their carriers
+
+
+avg_arr_delay %>%
+  filter(origin =="JFK", dest =="ATL")
+
+
+```
+
+As a result, carriers 9E, DL and EV are assessed below. The output shows that there was a flight a flight by carrier EV which was delayed more than normal. The other carriers with more flights have less extreme arrival delay times. Therefore, the reason for this large number is that there was an outlier flight by carrier EV.
+
+```{r}
+
+# Filter flights for JFK → ATL and carriers 9E, DL, EV 
+
+flights %>%
+  filter(origin == "JFK", dest == "ATL", carrier %in% c("9E", "DL", "EV"))%>%
+  group_by(carrier) %>%
+  summarise(
+    num_flights = n(),
+    avg_arr_delay = mean(arr_delay, na.rm = TRUE),
+    median_arr_delay = median(arr_delay, na.rm = TRUE),
+    max_arr_delay = max(arr_delay, na.rm = TRUE),
+    min_arr_delay = min(arr_delay, na.rm = TRUE),
+    .groups = "drop"
+  )           # obtaining flight data for assessment 
+```
+
+
+## Question 7
+
+The output shows that height and glucose have missing values. Furthermore, disease status and gender have incorrect entries.
+
+```{r}
+
+# Storing into data frame
+
+error_data <- structure(list(
+  id = c("id_1", "id_2", "id_3", "id_4", "id_5", "id_6", "id_7", "id_8", "id_9", "id_10",
+         "id_11", "id_12", "id_13", "id_14", "id_15", "id_16", "id_17", "id_18", "id_19", "id_20",
+         "id_21", "id_22", "id_23", "id_24", "id_25", "id_26", "id_27", "id_28", "id_29", "id_30",
+         "id_31", "id_32", "id_33", "id_34", "id_35", "id_36", "id_37", "id_38", "id_39", "id_40",
+         "id_41", "id_42", "id_43", "id_44", "id_45", "id_46", "id_47", "id_48", "id_49", "id_50"),
+  age = c(50L, 34L, 70L, 33L, 22L, 61L, 69L, 73L, 62L, 56L, 71L, 33L, 73L, 44L, 45L, 46L, 24L,
+          70L, 46L, 76L, 47L, 76L, 28L, 48L, 54L, 27L, 45L, 26L, 61L, 28L, 38L, 55L, 33L, 36L,
+          62L, 58L, 72L, 31L, 34L, 51L, 61L, 64L, 26L, 28L, 60L, 29L, 42L, 46L, 79L, 72L),
+  gender = c("male", "male", "male", "female", "female", "male", "female", "male", "male", "female",
+             "female", "male", "male", "female", "male", "male", "male", "male", "female", "male",
+             "male", "male", "male", "female", "femal", "male", "female", "female", "female", "female",
+             "male", "female", "female", "female", "male", "male", "female", "male", "female", "female",
+             "male", "female", "female", "male", "male", "female", "male", "male", "male", "female"),
+  height = c(174.4, 197.7, 174.1, 194.5, NA, 180.4, 170.5, 157.4, 196.8, 165.1,
+             153, 197.4, 186, 157.1, 177.5, 197.7, 179.3, 170.2, 182.4, NA,
+             165.4, 161, 168.5, 199.2, 157.7, 154.6, 157.1, 184.5, 181, 194.6,
+             183.6, 186.9, 176.1, 183, 191.1, 189.3, 199, 172, 165.6, 170.5,
+             150.5, 159.2, 192.1, 161.6, 162, 153.8, 162.3, 186.6, 192.4, 174.9),
+  weight = c(69.4, 62.3, 55.6, 69.5, 78.6, 60.8, 72.2, 60.9, 75.1, 67.7,
+             82.5, 68.7, 67.8, 76.7, 87, 61.1, 70.6, 63.3, 81.5, 59.2, 93.2,
+             87.3, 83.4, 80.9, 68.6, 76.5, 93.7, 79.1, 92, 65.6, 85.4, 63.3,
+             79.7, 74.1, 63.3, 78.2, 95.7, 95.1, 63.7, 66.1, 99.3, 81, 96.9,
+             73.3, 70.3, 83, 57.6, 78.6, 61.9, 98.1),
+  disease_status = c("diseased", "healthy", "healthy", "healthy", "healthy", "healthy", "diseased",
+                     "healthy", "diseased", "Healthy", "diseased", "healthy", "diseased", "healthy",
+                     "diseased", "healthy", "healthy", "healthy", "healthy", "healthy", "healthy",
+                     "diseased", "healthy", "diseased", "healthy", "healthy", "healthy", "healthy",
+                     "diseased", "diseased", "healthy", "healthy", "healthy", "diseased", "diseased",
+                     "diseased", "healthy", "diseased", "healthy", "healthy", "healthy", "healthy",
+                     "healthy", "diseased", "diseased", "diseased", "healthy", "healthy", "diseased",
+                     "diseased"),
+  glucose = c(96, 78, 101, 119, 103, 91, 86, NA, 77, 80, 115, 85, 88, 109, NA, 71, 90, 94, 91,
+              87, 113, 93, 97, 118, 109, 80, 85, 119, 99, 108, 89, 108, 97, 116, 79, 84, 75, 81,
+              119, NA, 106, 109, 75, 82, 84, 75, 76, 120, 119, 77)
+), row.names = c(NA, -50L), class = c("tbl_df", "tbl", "data.frame"))
+
+# This viewing option shows details of the columns
+
+UtilsDataRSV::view_cols(error_data)
+```

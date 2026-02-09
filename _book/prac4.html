@@ -183,6 +183,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-6-part-1-and-2" id="toc-question-6-part-1-and-2" class="nav-link" data-scroll-target="#question-6-part-1-and-2"><span class="header-section-number">4.6</span> Question 6: Part 1 and 2</a></li>
   <li><a href="#question-6-part-3" id="toc-question-6-part-3" class="nav-link" data-scroll-target="#question-6-part-3"><span class="header-section-number">4.7</span> Question 6: Part 3</a></li>
   <li><a href="#question-6-part-4" id="toc-question-6-part-4" class="nav-link" data-scroll-target="#question-6-part-4"><span class="header-section-number">4.8</span> Question 6: Part 4</a></li>
+  <li><a href="#question-6-part-5" id="toc-question-6-part-5" class="nav-link" data-scroll-target="#question-6-part-5"><span class="header-section-number">4.9</span> Question 6: Part 5</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7"><span class="header-section-number">4.10</span> Question 7</a></li>
   </ul>
 </nav>
     </div>
@@ -216,76 +218,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "year"
-[1] 121
+[1] 1178
 [1] "_____________________"
 [1] "month"
-[1]  6  4  7  1 10
+[1] 11  5  1  9  6
 [1] "_____________________"
 [1] "day"
-[1] 30 22 31 13  1
+[1]  7 27 30  3 19
 [1] "_____________________"
 [1] "dep_time"
-[1] 1549  151  723  655   NA
+[1] 1858 1140  717   45   NA
 [1] "_____________________"
 [1] "sched_dep_time"
-[1]  619 1611  816 1254 1008
+[1] 1543 2210 1407  858 1422
 [1] "_____________________"
 [1] "dep_delay"
-[1] 434 319 337 245  NA
+[1] 147 374 258 218  NA
 [1] "_____________________"
 [1] "arr_time"
-[1] 2106 1152 1704  802   NA
+[1]  234  241 1434  403   NA
 [1] "_____________________"
 [1] "sched_arr_time"
-[1] 2242 2307 2045 1603 1820
+[1] 1320 1345 2232 2237 2245
 [1] "_____________________"
 [1] "arr_delay"
-[1]  54 780 162 170  NA
+[1] 443 303 645 401  NA
 [1] "_____________________"
 [1] "carrier"
- [1] "AA" "US" "AS" "9E" "HA" "WN" "OO" "DL" "YV" "EV" "UA" "VX" "B6" "F9" "FL"
-[16] "MQ"
+ [1] "UA" "HA" "DL" "YV" "EV" "OO" "9E" "VX" "MQ" "AA" "AS" "WN" "FL" "B6" "US"
+[16] "F9"
 [1] "_____________________"
 [1] "flight"
-[1] 3638  415   32 4148 3521
+[1]  530 3446 3509 5137 3223
 [1] "_____________________"
 [1] "tailnum"
- [1] "N3BKAA" "N177DN" "N567UA" "N380AA" "N515SW" "N3EPAA" "N657AW" "N7726A"
- [9] "N3KRAA" "N356NW" "N353JB" "N559UA" "N14171" "N733UW" "N26210" "N3KDAA"
-[17] "N922EV" "N327AA" "N853MQ" NA      
+ [1] "N761ND" "N724EV" "N750AT" "N385DN" "N12167" "N940DL" "N637VA" "N3GHAA"
+ [9] "N77530" "N409UA" "N627JB" "N613MQ" "N965UW" "N3AEAA" "N822UA" "N8309C"
+[17] "N396AA" "N14902" "N839AY" NA      
 [1] "4024 unique entries not displayed"
 [1] "_____________________"
 [1] "origin"
-[1] "LGA" "EWR" "JFK"
+[1] "JFK" "LGA" "EWR"
 [1] "_____________________"
 [1] "dest"
- [1] "SYR" "IND" "LGB" "AUS" "PWM" "JAX" "PBI" "BZN" "MTJ" "OAK" "SJC" "SLC"
-[13] "MVY" "GRR" "SAT" "MIA" "IAD" "GSO" "EGE" "SNA"
+ [1] "CHO" "TYS" "EYW" "OMA" "BQN" "XNA" "EGE" "ACK" "PSP" "CAE" "BUF" "IAD"
+[13] "CAK" "SYR" "FLL" "BTV" "MVY" "LEX" "HOU" "SNA"
 [1] "85 unique entries not displayed"
 [1] "_____________________"
 [1] "air_time"
-[1] 215 238  45 325  NA
+[1] 628 302 341 273  NA
 [1] "_____________________"
 [1] "distance"
-[1]  738 1894  301  273 1585
+[1]  509  533 1020 1585 1131
 [1] "_____________________"
 [1] "hour"
-[1]  5 15  7 16 21
+[1] 14 18  1 10 13
 [1] "_____________________"
 [1] "minute"
-[1] 26 17 32 53 19
+[1]  2 18 44 16 34
 [1] "_____________________"
 [1] "time_hour"
- [1] "2013-06-11 21:00:00 EDT" "2013-11-29 22:00:00 EST"
- [3] "2013-10-31 07:00:00 EDT" "2013-04-30 18:00:00 EDT"
- [5] "2013-11-17 21:00:00 EST" "2013-12-28 07:00:00 EST"
- [7] "2013-10-20 14:00:00 EDT" "2013-08-11 18:00:00 EDT"
- [9] "2013-01-11 14:00:00 EST" "2013-11-19 12:00:00 EST"
-[11] "2013-04-11 08:00:00 EDT" "2013-10-02 06:00:00 EDT"
-[13] "2013-07-21 16:00:00 EDT" "2013-03-23 13:00:00 EDT"
-[15] "2013-09-24 23:00:00 EDT" "2013-01-13 13:00:00 EST"
-[17] "2013-03-25 13:00:00 EDT" "2013-12-20 11:00:00 EST"
-[19] "2013-08-30 22:00:00 EDT" "2013-02-28 10:00:00 EST"
+ [1] "2013-04-25 09:00:00 EDT" "2013-04-16 13:00:00 EDT"
+ [3] "2013-08-23 05:00:00 EDT" "2013-09-11 12:00:00 EDT"
+ [5] "2013-08-31 22:00:00 EDT" "2013-03-11 19:00:00 EDT"
+ [7] "2013-12-29 08:00:00 EST" "2013-12-29 09:00:00 EST"
+ [9] "2013-05-21 23:00:00 EDT" "2013-09-11 05:00:00 EDT"
+[11] "2013-06-21 16:00:00 EDT" "2013-09-25 16:00:00 EDT"
+[13] "2013-11-03 22:00:00 EST" "2013-01-31 17:00:00 EST"
+[15] "2013-03-28 07:00:00 EDT" "2013-10-15 05:00:00 EDT"
+[17] "2013-05-29 22:00:00 EDT" "2013-03-10 13:00:00 EDT"
+[19] "2013-10-26 11:00:00 EDT" "2013-10-09 17:00:00 EDT"
 [1] "6916 unique entries not displayed"
 [1] "_____________________"</code></pre>
 </div>
@@ -431,7 +433,7 @@ dest, time_hour</code></pre>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n_distinct</span>(carrier) <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span>   <span class="co"># filtering out non-repeat routes </span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>avg_arr_delay <span class="ot">&lt;-</span> multi_routes <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>avg_arr_delay <span class="ot">&lt;&lt;-</span> multi_routes <span class="sc">%&gt;%</span></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest, carrier) <span class="sc">%&gt;%</span>   </span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr_del_avg =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
@@ -501,6 +503,126 @@ dest, time_hour</code></pre>
   origin dest  best_delay worst_delay diff_del
   &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;
 1 JFK    ATL         1.40         128     127.</code></pre>
+</div>
+</div>
+</section>
+<section id="question-6-part-5" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="question-6-part-5"><span class="header-section-number">4.9</span> Question 6: Part 5</h2>
+<p>From the previous output it is evident that the JFK-ATL route has the largest difference so it is investigated below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Observing JFK ATL flights with their carriers</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>avg_arr_delay <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(origin <span class="sc">==</span><span class="st">"JFK"</span>, dest <span class="sc">==</span><span class="st">"ATL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  origin dest  carrier arr_del_avg
+  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;
+1 JFK    ATL   9E             1.40
+2 JFK    ATL   DL             6.34
+3 JFK    ATL   EV           128   </code></pre>
+</div>
+</div>
+<p>As a result, carriers 9E, DL and EV are assessed below. The output shows that there was a flight a flight by carrier EV which was delayed more than normal. The other carriers with more flights have less extreme arrival delay times. Therefore, the reason for this large number is that there was an outlier flight by carrier EV.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter flights for JFK → ATL and carriers 9E, DL, EV </span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(origin <span class="sc">==</span> <span class="st">"JFK"</span>, dest <span class="sc">==</span> <span class="st">"ATL"</span>, carrier <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"9E"</span>, <span class="st">"DL"</span>, <span class="st">"EV"</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(carrier) <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_flights =</span> <span class="fu">n</span>(),</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_arr_delay =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_arr_delay =</span> <span class="fu">median</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_arr_delay =</span> <span class="fu">max</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_arr_delay =</span> <span class="fu">min</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  )           <span class="co"># obtaining flight data for assessment </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 6
+  carrier num_flights avg_arr_delay median_arr_delay max_arr_delay min_arr_delay
+  &lt;chr&gt;         &lt;int&gt;         &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 9E               55          1.40              1.5            55           -43
+2 DL             1874          6.34             -4             612           -44
+3 EV                1        128               128             128           128</code></pre>
+</div>
+</div>
+</section>
+<section id="question-7" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="question-7"><span class="header-section-number">4.10</span> Question 7</h2>
+<p>The output shows that height and glucose have missing values. Furthermore, disease status and gender have incorrect entries.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Storing into data frame</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>error_data <span class="ot">&lt;-</span> <span class="fu">structure</span>(<span class="fu">list</span>(</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="st">"id_1"</span>, <span class="st">"id_2"</span>, <span class="st">"id_3"</span>, <span class="st">"id_4"</span>, <span class="st">"id_5"</span>, <span class="st">"id_6"</span>, <span class="st">"id_7"</span>, <span class="st">"id_8"</span>, <span class="st">"id_9"</span>, <span class="st">"id_10"</span>,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">"id_11"</span>, <span class="st">"id_12"</span>, <span class="st">"id_13"</span>, <span class="st">"id_14"</span>, <span class="st">"id_15"</span>, <span class="st">"id_16"</span>, <span class="st">"id_17"</span>, <span class="st">"id_18"</span>, <span class="st">"id_19"</span>, <span class="st">"id_20"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">"id_21"</span>, <span class="st">"id_22"</span>, <span class="st">"id_23"</span>, <span class="st">"id_24"</span>, <span class="st">"id_25"</span>, <span class="st">"id_26"</span>, <span class="st">"id_27"</span>, <span class="st">"id_28"</span>, <span class="st">"id_29"</span>, <span class="st">"id_30"</span>,</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>         <span class="st">"id_31"</span>, <span class="st">"id_32"</span>, <span class="st">"id_33"</span>, <span class="st">"id_34"</span>, <span class="st">"id_35"</span>, <span class="st">"id_36"</span>, <span class="st">"id_37"</span>, <span class="st">"id_38"</span>, <span class="st">"id_39"</span>, <span class="st">"id_40"</span>,</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">"id_41"</span>, <span class="st">"id_42"</span>, <span class="st">"id_43"</span>, <span class="st">"id_44"</span>, <span class="st">"id_45"</span>, <span class="st">"id_46"</span>, <span class="st">"id_47"</span>, <span class="st">"id_48"</span>, <span class="st">"id_49"</span>, <span class="st">"id_50"</span>),</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">50</span>L, <span class="dv">34</span>L, <span class="dv">70</span>L, <span class="dv">33</span>L, <span class="dv">22</span>L, <span class="dv">61</span>L, <span class="dv">69</span>L, <span class="dv">73</span>L, <span class="dv">62</span>L, <span class="dv">56</span>L, <span class="dv">71</span>L, <span class="dv">33</span>L, <span class="dv">73</span>L, <span class="dv">44</span>L, <span class="dv">45</span>L, <span class="dv">46</span>L, <span class="dv">24</span>L,</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>          <span class="dv">70</span>L, <span class="dv">46</span>L, <span class="dv">76</span>L, <span class="dv">47</span>L, <span class="dv">76</span>L, <span class="dv">28</span>L, <span class="dv">48</span>L, <span class="dv">54</span>L, <span class="dv">27</span>L, <span class="dv">45</span>L, <span class="dv">26</span>L, <span class="dv">61</span>L, <span class="dv">28</span>L, <span class="dv">38</span>L, <span class="dv">55</span>L, <span class="dv">33</span>L, <span class="dv">36</span>L,</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>          <span class="dv">62</span>L, <span class="dv">58</span>L, <span class="dv">72</span>L, <span class="dv">31</span>L, <span class="dv">34</span>L, <span class="dv">51</span>L, <span class="dv">61</span>L, <span class="dv">64</span>L, <span class="dv">26</span>L, <span class="dv">28</span>L, <span class="dv">60</span>L, <span class="dv">29</span>L, <span class="dv">42</span>L, <span class="dv">46</span>L, <span class="dv">79</span>L, <span class="dv">72</span>L),</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>,</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>             <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>,</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>             <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"femal"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>,</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>             <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>,</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>             <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>),</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="fu">c</span>(<span class="fl">174.4</span>, <span class="fl">197.7</span>, <span class="fl">174.1</span>, <span class="fl">194.5</span>, <span class="cn">NA</span>, <span class="fl">180.4</span>, <span class="fl">170.5</span>, <span class="fl">157.4</span>, <span class="fl">196.8</span>, <span class="fl">165.1</span>,</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>             <span class="dv">153</span>, <span class="fl">197.4</span>, <span class="dv">186</span>, <span class="fl">157.1</span>, <span class="fl">177.5</span>, <span class="fl">197.7</span>, <span class="fl">179.3</span>, <span class="fl">170.2</span>, <span class="fl">182.4</span>, <span class="cn">NA</span>,</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>             <span class="fl">165.4</span>, <span class="dv">161</span>, <span class="fl">168.5</span>, <span class="fl">199.2</span>, <span class="fl">157.7</span>, <span class="fl">154.6</span>, <span class="fl">157.1</span>, <span class="fl">184.5</span>, <span class="dv">181</span>, <span class="fl">194.6</span>,</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>             <span class="fl">183.6</span>, <span class="fl">186.9</span>, <span class="fl">176.1</span>, <span class="dv">183</span>, <span class="fl">191.1</span>, <span class="fl">189.3</span>, <span class="dv">199</span>, <span class="dv">172</span>, <span class="fl">165.6</span>, <span class="fl">170.5</span>,</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>             <span class="fl">150.5</span>, <span class="fl">159.2</span>, <span class="fl">192.1</span>, <span class="fl">161.6</span>, <span class="dv">162</span>, <span class="fl">153.8</span>, <span class="fl">162.3</span>, <span class="fl">186.6</span>, <span class="fl">192.4</span>, <span class="fl">174.9</span>),</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight =</span> <span class="fu">c</span>(<span class="fl">69.4</span>, <span class="fl">62.3</span>, <span class="fl">55.6</span>, <span class="fl">69.5</span>, <span class="fl">78.6</span>, <span class="fl">60.8</span>, <span class="fl">72.2</span>, <span class="fl">60.9</span>, <span class="fl">75.1</span>, <span class="fl">67.7</span>,</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>             <span class="fl">82.5</span>, <span class="fl">68.7</span>, <span class="fl">67.8</span>, <span class="fl">76.7</span>, <span class="dv">87</span>, <span class="fl">61.1</span>, <span class="fl">70.6</span>, <span class="fl">63.3</span>, <span class="fl">81.5</span>, <span class="fl">59.2</span>, <span class="fl">93.2</span>,</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>             <span class="fl">87.3</span>, <span class="fl">83.4</span>, <span class="fl">80.9</span>, <span class="fl">68.6</span>, <span class="fl">76.5</span>, <span class="fl">93.7</span>, <span class="fl">79.1</span>, <span class="dv">92</span>, <span class="fl">65.6</span>, <span class="fl">85.4</span>, <span class="fl">63.3</span>,</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>             <span class="fl">79.7</span>, <span class="fl">74.1</span>, <span class="fl">63.3</span>, <span class="fl">78.2</span>, <span class="fl">95.7</span>, <span class="fl">95.1</span>, <span class="fl">63.7</span>, <span class="fl">66.1</span>, <span class="fl">99.3</span>, <span class="dv">81</span>, <span class="fl">96.9</span>,</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>             <span class="fl">73.3</span>, <span class="fl">70.3</span>, <span class="dv">83</span>, <span class="fl">57.6</span>, <span class="fl">78.6</span>, <span class="fl">61.9</span>, <span class="fl">98.1</span>),</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">disease_status =</span> <span class="fu">c</span>(<span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>,</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"Healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>,</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>,</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>,</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"diseased"</span>,</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>,</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>,</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"diseased"</span>),</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">glucose =</span> <span class="fu">c</span>(<span class="dv">96</span>, <span class="dv">78</span>, <span class="dv">101</span>, <span class="dv">119</span>, <span class="dv">103</span>, <span class="dv">91</span>, <span class="dv">86</span>, <span class="cn">NA</span>, <span class="dv">77</span>, <span class="dv">80</span>, <span class="dv">115</span>, <span class="dv">85</span>, <span class="dv">88</span>, <span class="dv">109</span>, <span class="cn">NA</span>, <span class="dv">71</span>, <span class="dv">90</span>, <span class="dv">94</span>, <span class="dv">91</span>,</span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>              <span class="dv">87</span>, <span class="dv">113</span>, <span class="dv">93</span>, <span class="dv">97</span>, <span class="dv">118</span>, <span class="dv">109</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">119</span>, <span class="dv">99</span>, <span class="dv">108</span>, <span class="dv">89</span>, <span class="dv">108</span>, <span class="dv">97</span>, <span class="dv">116</span>, <span class="dv">79</span>, <span class="dv">84</span>, <span class="dv">75</span>, <span class="dv">81</span>,</span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>              <span class="dv">119</span>, <span class="cn">NA</span>, <span class="dv">106</span>, <span class="dv">109</span>, <span class="dv">75</span>, <span class="dv">82</span>, <span class="dv">84</span>, <span class="dv">75</span>, <span class="dv">76</span>, <span class="dv">120</span>, <span class="dv">119</span>, <span class="dv">77</span>)</span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>), <span class="at">row.names =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="sc">-</span><span class="dv">50</span>L), <span class="at">class =</span> <span class="fu">c</span>(<span class="st">"tbl_df"</span>, <span class="st">"tbl"</span>, <span class="st">"data.frame"</span>))</span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a><span class="co"># This viewing option shows details of the columns</span></span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(error_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "id"
+ [1] "id_44" "id_16" "id_29" "id_49" "id_39" "id_1"  "id_25" "id_45" "id_26"
+[10] "id_14" "id_21" "id_13" "id_3"  "id_17" "id_28" "id_18" "id_37" "id_23"
+[19] "id_15" "id_2" 
+[1] "30 unique entries not displayed"
+[1] "_____________________"
+[1] "age"
+[1] 27 60 31 33 61
+[1] "_____________________"
+[1] "gender"
+[1] "female" "femal"  "male"  
+[1] "_____________________"
+[1] "height"
+[1] 161.0 189.3 165.6 170.5    NA
+[1] "_____________________"
+[1] "weight"
+[1] 55.6 87.0 68.6 81.0 62.3
+[1] "_____________________"
+[1] "disease_status"
+[1] "Healthy"  "healthy"  "diseased"
+[1] "_____________________"
+[1] "glucose"
+[1]  71  76 103  85  NA
+[1] "_____________________"</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Not all unique entries displayed for these non-numeric cols: id</code></pre>
 </div>
 </div>
 
