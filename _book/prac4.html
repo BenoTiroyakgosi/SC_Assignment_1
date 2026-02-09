@@ -180,6 +180,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3"><span class="header-section-number">4.3</span> Question 3</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4"><span class="header-section-number">4.4</span> Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5"><span class="header-section-number">4.5</span> Question 5</a></li>
+  <li><a href="#question-6-part-1-and-2" id="toc-question-6-part-1-and-2" class="nav-link" data-scroll-target="#question-6-part-1-and-2"><span class="header-section-number">4.6</span> Question 6: Part 1 and 2</a></li>
+  <li><a href="#question-6-part-3" id="toc-question-6-part-3" class="nav-link" data-scroll-target="#question-6-part-3"><span class="header-section-number">4.7</span> Question 6: Part 3</a></li>
+  <li><a href="#question-6-part-4" id="toc-question-6-part-4" class="nav-link" data-scroll-target="#question-6-part-4"><span class="header-section-number">4.8</span> Question 6: Part 4</a></li>
   </ul>
 </nav>
     </div>
@@ -213,76 +216,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "year"
-[1] 1695
+[1] 719
 [1] "_____________________"
 [1] "month"
-[1]  9  6 10  1 12
+[1] 11  8  7  5 12
 [1] "_____________________"
 [1] "day"
-[1] 21 24  3 30 25
+[1] 16  1 20 21 13
 [1] "_____________________"
 [1] "dep_time"
-[1]  529 1244 1514 1550   NA
+[1]   44 1946 1218  154   NA
 [1] "_____________________"
 [1] "sched_dep_time"
-[1] 2058 1459 1908 1042 2205
+[1]  851  647 1433 2039 2345
 [1] "_____________________"
 [1] "dep_delay"
-[1] 409 133  13   3  NA
+[1] 190 112  78 142  NA
 [1] "_____________________"
 [1] "arr_time"
-[1]  137 2123 1008 1835   NA
+[1] 1540 1355 2059 1850   NA
 [1] "_____________________"
 [1] "sched_arr_time"
-[1] 2251 1212 2000 1559  658
+[1] 2050  126   17 2334 1133
 [1] "_____________________"
 [1] "arr_delay"
-[1]  22 176  59  58  NA
+[1]  35 -55 851  56  NA
 [1] "_____________________"
 [1] "carrier"
- [1] "DL" "FL" "OO" "MQ" "UA" "AA" "EV" "WN" "F9" "9E" "YV" "US" "AS" "B6" "HA"
-[16] "VX"
+ [1] "F9" "VX" "9E" "WN" "HA" "OO" "FL" "US" "EV" "DL" "AS" "YV" "MQ" "UA" "AA"
+[16] "B6"
 [1] "_____________________"
 [1] "flight"
-[1] 1882  751 3373 1423 4408
+[1]  147 3466  230 3296 4254
 [1] "_____________________"
 [1] "tailnum"
- [1] "N921DL" "N944DN" "N524AS" "N795SK" "N398AA" "N937DL" "N5DMAA" "N955WN"
- [9] "N75433" "N911DA" "N654DL" "N3AKAA" "N5DRAA" "N432UA" "N577UA" "N184JB"
-[17] "N291AT" "N5ELAA" "N5EHAA" NA      
+ [1] "N793SA" "N622AA" "N675UA" "N631AW" "N456UA" "N8847A" "N12238" "N905DE"
+ [9] "N8797A" "N923WN" "N517AS" "N919AT" "N655DL" "N3746H" "N191UW" "N604LR"
+[17] "N3GGAA" "N37281" "N3HEAA" NA      
 [1] "4024 unique entries not displayed"
 [1] "_____________________"
 [1] "origin"
-[1] "LGA" "EWR" "JFK"
+[1] "EWR" "LGA" "JFK"
 [1] "_____________________"
 [1] "dest"
- [1] "PBI" "EGE" "IAD" "TPA" "OKC" "LEX" "SAV" "BOS" "ANC" "MSY" "BWI" "BQN"
-[13] "CHO" "CMH" "ATL" "DFW" "TYS" "ORF" "BDL" "XNA"
+ [1] "HOU" "CAK" "EYW" "PBI" "ACK" "BOS" "SMF" "RSW" "MSY" "CAE" "LGA" "DFW"
+[13] "CLT" "PSP" "MDW" "BNA" "MHT" "BWI" "CMH" "DEN"
 [1] "85 unique entries not displayed"
 [1] "_____________________"
 [1] "air_time"
-[1] 620 637  27  73  NA
+[1] 207 235 208 135  NA
 [1] "_____________________"
 [1] "distance"
-[1] 618 533 277 645 944
+[1]  214  277 1148  187 2378
 [1] "_____________________"
 [1] "hour"
-[1]  8 23 11 19 13
+[1]  1 21 19  8  9
 [1] "_____________________"
 [1] "minute"
-[1] 39  6 11 30 37
+[1] 49  1 24 20 16
 [1] "_____________________"
 [1] "time_hour"
- [1] "2013-08-21 09:00:00 EDT" "2013-06-09 14:00:00 EDT"
- [3] "2013-07-02 17:00:00 EDT" "2013-01-15 20:00:00 EST"
- [5] "2013-05-27 20:00:00 EDT" "2013-05-27 10:00:00 EDT"
- [7] "2013-06-20 16:00:00 EDT" "2013-12-16 08:00:00 EST"
- [9] "2013-10-28 11:00:00 EDT" "2013-10-21 18:00:00 EDT"
-[11] "2013-01-03 05:00:00 EST" "2013-06-04 16:00:00 EDT"
-[13] "2013-09-23 13:00:00 EDT" "2013-09-09 14:00:00 EDT"
-[15] "2013-07-05 20:00:00 EDT" "2013-08-23 23:00:00 EDT"
-[17] "2013-03-12 16:00:00 EDT" "2013-05-19 20:00:00 EDT"
-[19] "2013-09-05 13:00:00 EDT" "2013-12-22 08:00:00 EST"
+ [1] "2013-01-04 12:00:00 EST" "2013-02-27 08:00:00 EST"
+ [3] "2013-06-28 05:00:00 EDT" "2013-08-14 16:00:00 EDT"
+ [5] "2013-01-28 12:00:00 EST" "2013-05-09 16:00:00 EDT"
+ [7] "2013-09-18 11:00:00 EDT" "2013-03-01 16:00:00 EST"
+ [9] "2013-06-19 11:00:00 EDT" "2013-01-28 09:00:00 EST"
+[11] "2013-08-14 07:00:00 EDT" "2013-08-10 06:00:00 EDT"
+[13] "2013-02-10 05:00:00 EST" "2013-06-25 22:00:00 EDT"
+[15] "2013-04-05 09:00:00 EDT" "2013-05-06 14:00:00 EDT"
+[17] "2013-12-06 14:00:00 EST" "2013-02-11 10:00:00 EST"
+[19] "2013-09-24 07:00:00 EDT" "2013-03-28 20:00:00 EDT"
 [1] "6916 unique entries not displayed"
 [1] "_____________________"</code></pre>
 </div>
@@ -410,13 +413,94 @@ dest, time_hour</code></pre>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>flight_condition<span class="ot">&lt;-</span>  flights<span class="sc">%&gt;%</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dep_delay <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> arr_delay <span class="sc">&lt;=</span> <span class="dv">0</span>)</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>total_flights <span class="ot">&lt;-</span> <span class="fu">nrow</span>(flights)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>met_condition <span class="ot">&lt;-</span> <span class="fu">nrow</span>(flight_condition)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>total_flights <span class="ot">&lt;-</span> <span class="fu">nrow</span>(flights)           <span class="co"># number of total flights</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>met_condition <span class="ot">&lt;-</span> <span class="fu">nrow</span>(flight_condition)  <span class="co"># number of flights which met condition</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>prop_of_flights <span class="ot">&lt;-</span> met_condition <span class="sc">/</span> total_flights </span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(prop_of_flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1052391</code></pre>
+</div>
+</div>
+</section>
+<section id="question-6-part-1-and-2" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="question-6-part-1-and-2"><span class="header-section-number">4.6</span> Question 6: Part 1 and 2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>multi_routes <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span>            </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest) <span class="sc">%&gt;%</span>            <span class="co"># grouping allowing for count in the next line  </span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n_distinct</span>(carrier) <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span>   <span class="co"># filtering out non-repeat routes </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>avg_arr_delay <span class="ot">&lt;-</span> multi_routes <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest, carrier) <span class="sc">%&gt;%</span>   </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr_del_avg =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>avg_arr_delay</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 343 × 4
+   origin dest  carrier arr_del_avg
+   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;
+ 1 EWR    ATL   9E            -6.25
+ 2 EWR    ATL   DL            10.00
+ 3 EWR    ATL   EV            19.5 
+ 4 EWR    ATL   UA            10.5 
+ 5 EWR    AUS   UA             4.28
+ 6 EWR    AUS   WN           -11.2 
+ 7 EWR    BDL   EV             6.78
+ 8 EWR    BDL   UA            22.6 
+ 9 EWR    BNA   EV            17.7 
+10 EWR    BNA   WN            -2.13
+# ℹ 333 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="question-6-part-3" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="question-6-part-3"><span class="header-section-number">4.7</span> Question 6: Part 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter is used to keep the carrier with lowest delay time per route</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>avg_arr_delay <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest) <span class="sc">%&gt;%</span>            </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(arr_del_avg <span class="sc">==</span> <span class="fu">min</span>(arr_del_avg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span>  </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 128 × 4
+   origin dest  carrier arr_del_avg
+   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;
+ 1 EWR    ATL   9E           -6.25 
+ 2 EWR    AUS   WN          -11.2  
+ 3 EWR    BDL   EV            6.78 
+ 4 EWR    BNA   WN           -2.13 
+ 5 EWR    BOS   EV           -4.01 
+ 6 EWR    BWI   WN            5.95 
+ 7 EWR    CHS   UA          -14    
+ 8 EWR    CLE   EV           -3.71 
+ 9 EWR    CLT   US            0.920
+10 EWR    CVG   9E            1.40 
+# ℹ 118 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="question-6-part-4" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="question-6-part-4"><span class="header-section-number">4.8</span> Question 6: Part 4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>avg_arr_delay <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">best_delay  =</span> <span class="fu">min</span>(arr_del_avg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="co"># smallest delay by route</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">worst_delay =</span> <span class="fu">max</span>(arr_del_avg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="co"># largest delay by route</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_del    =</span> worst_delay <span class="sc">-</span> best_delay,        </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diff_del <span class="sc">==</span> <span class="fu">max</span>(diff_del, <span class="at">na.rm =</span><span class="cn">TRUE</span>))  <span class="co"># retain only the largest delay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 5
+  origin dest  best_delay worst_delay diff_del
+  &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;
+1 JFK    ATL         1.40         128     127.</code></pre>
 </div>
 </div>
 

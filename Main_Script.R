@@ -287,27 +287,52 @@ met_condition <- nrow(flight_condition)  # number of flights which met condition
 prop_of_flights <- met_condition / total_flights 
 print(prop_of_flights)
 
-            
+#-----------------------------------------------------
+#  Question 6 (Part 1 and 2)
+#-----------------------------------------------------
 
 
+multi_routes <- flights %>%            
+  group_by(origin, dest) %>%            # grouping allowing for count in the next line  
+  filter(n_distinct(carrier) > 1) %>%   # filtering out non-repeat routes 
+  ungroup()
+
+avg_arr_delay <- multi_routes %>%
+  group_by(origin, dest, carrier) %>%   
+  summarise(
+    arr_del_avg = mean(arr_delay, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+avg_arr_delay
+
+#----------------------------------------------------
+# Question 6 part 3
+#----------------------------------------------------
 
 
+# filter is used to keep the carrier with lowest delay time per route
+
+avg_arr_delay %>% 
+  group_by(origin, dest) %>%            
+  filter(arr_del_avg == min(arr_del_avg, na.rm = TRUE)) %>%  
+  ungroup()
 
 
+#--------------------------------------------------
+# Question 6 part 4
+#-------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+avg_arr_delay %>%
+  group_by(origin, dest) %>%
+  summarise(
+    best_delay  = min(arr_del_avg, na.rm = TRUE), # smallest delay by route
+    worst_delay = max(arr_del_avg, na.rm = TRUE), # largest delay by route
+    diff_del    = worst_delay - best_delay,        
+    .groups = "drop"
+  )%>%
+  filter(diff_del == max(diff_del, na.rm =TRUE))  # retain only the largest delay
 
 
 
